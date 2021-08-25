@@ -9,7 +9,10 @@ public class ZupperService {
     @Autowired
     private ZupperRepository zupperRepository;
 
-
+    //Cadastrando zuppers.
+    public Zupper saveZupper(Zupper zupper){
+        return zupperRepository.save(zupper);
+    }
 
 
 }

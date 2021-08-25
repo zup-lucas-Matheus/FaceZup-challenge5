@@ -26,9 +26,16 @@ public class ZupperController {
         return zupperService.allZuppers();
     }
 
-    @GetMapping(path = "/{id}")
-    public Zupper findZupperToID(String email){
+    @GetMapping(path = "/{email}")
+    public Zupper findZupperToID(@PathVariable String email){
         return zupperService.findforIdEmail(email);
+
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping(path = "email")
+    public void deleteZupperForId(@PathVariable String email){
+        zupperService.deleteZupper(email);
 
     }
 

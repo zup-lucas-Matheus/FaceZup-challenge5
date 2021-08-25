@@ -28,6 +28,11 @@ public class ZupperService {
         return zupperRepository.findById(email)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Zupper não encontrado"));
 
+    }
+
+    //Excluir zupper da base de dados.
+    public void deleteZupper(String email){
+        zupperRepository.deleteById(email);
 
     }
 

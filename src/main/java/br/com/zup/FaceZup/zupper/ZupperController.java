@@ -33,7 +33,7 @@ public class ZupperController {
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping(path = "email")
+    @DeleteMapping(path = "/{email}")
     public void deleteZupperForId(@PathVariable String email){
         zupperService.deleteZupper(email);
 

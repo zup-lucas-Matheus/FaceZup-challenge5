@@ -20,11 +20,16 @@ public class ZupperController {
         return zupperService.saveZupper(zupper);
     }
 
-
     @ResponseStatus(HttpStatus.OK)
     @GetMapping
     public List<Zupper> allZuppers(){
         return zupperService.allZuppers();
+    }
+
+    @GetMapping(path = "/{id}")
+    public Zupper findZupperToID(String email){
+        return zupperService.findforIdEmail(email);
+
     }
 
 }
